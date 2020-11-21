@@ -9,14 +9,14 @@ pipeline{
       }
    stage('test'){
       steps{
-         bat "timeout 30 >nul" 
+         bat "ping localhost -n 30  >nul && :: will wait 3 seconds before going next command (it will not display)" 
          echo "its testing"
           bat "dir"
            } 
       }
    stage('deploy'){
       steps{
-        bat "timeout 30 >nul"  
+        bat "ping localhost -n 30 >nul && :: will wait 3 seconds before going next command (it will not display)"  
         echo "its deploying"
            } 
       }
