@@ -7,7 +7,6 @@ pipeline{
           bat "dir"
            } 
       }
-    parallel{
     stage('test'){
       steps{
          bat "for /l %%x in (1, 1, 1000000) do echo %%x" 
@@ -21,6 +20,5 @@ pipeline{
         echo "its deploying"
            } 
       }
-    }
     }
 }
