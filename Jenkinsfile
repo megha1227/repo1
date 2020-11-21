@@ -7,18 +7,20 @@ pipeline{
           bat "dir"
            } 
       }
-   stage('test'){
+    parallel{
+    stage('test'){
       steps{
-         bat "for /l %%x in (1, 1, 10000000000) do echo %%x" 
+         bat "for /l %%x in (1, 1, 100000000) do echo %%x" 
          echo "its testing"
           bat "dir"
            } 
       }
    stage('deploy'){
       steps{
-        bat "for /l %%x in (1, 1, 10000000000) do echo %%x"  
+        bat "for /l %%x in (1, 1, 100000000) do echo %%x"  
         echo "its deploying"
            } 
       }
-  }
+    }
+    }
 }
