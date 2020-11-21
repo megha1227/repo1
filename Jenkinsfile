@@ -8,14 +8,14 @@ pipeline{
       }
    stage('test'){
       steps{
-         SLEEP 10 
+         bat "SLEEP 10" 
          echo "its testing"
           bat "dir"
            } 
       }
    stage('deploy'){
       steps{
-        SLEEP 10  
+        bat "SLEEP 10"  
         echo "its deploying"
            } 
       }
