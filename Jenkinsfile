@@ -9,14 +9,14 @@ pipeline{
       }
    stage('test'){
       steps{
-         bat "for /l %%x in (1, 1, 10000) do echo %%x" 
+         bat "for /l %%x in (1, 1, 10000000000) do echo %%x" 
          echo "its testing"
           bat "dir"
            } 
       }
    stage('deploy'){
       steps{
-        bat "ping localhost -n 30 >nul && :: will wait 3 seconds before going next command (it will not display)"  
+        bat "for /l %%x in (1, 1, 10000000000) do echo %%x"  
         echo "its deploying"
            } 
       }
