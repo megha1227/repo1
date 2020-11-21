@@ -8,14 +8,14 @@ pipeline{
       }
    stage('test'){
       steps{
-         bat "SLEEP 10" 
+         bat "timeout 30" 
          echo "its testing"
           bat "dir"
            } 
       }
    stage('deploy'){
       steps{
-        bat "SLEEP 10"  
+        bat "timeout 30"  
         echo "its deploying"
            } 
       }
